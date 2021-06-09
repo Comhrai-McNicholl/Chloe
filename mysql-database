@@ -1,0 +1,18 @@
+CREATE TABLE students(
+    studentsId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    studentsName varchar(128) NOT NULL,
+    studentsAddress varchar(128) NOT NULL,
+    studentsNokn varchar(128) NOT NULL,
+    studentsNoka varchar(128) NOT NULL,
+    studentsNokno varchar(128) NOT NULL,
+    studentsOfficeno varchar(128) NOT NULL,
+    studentsExtensionno varchar(128) NOT NULL,
+    studentsDob varchar(128) NOT NULL,
+    studentsEmail varchar(128) NOT NULL,
+    studentsNationalI varchar(128) NOT NULL,
+    studentsPpn varchar(128) NOT NULL,
+    studentsCoursen varchar(128) NOT NULL,
+    studentsFees varchar(128) NOT NULL,
+    studentsPwd varchar(128) NOT NULL
+);
+

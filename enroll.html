@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <title> Ace Training - Enrollment Form </title>
+</head>
+<body>
+    
+    <div class="container">
+
+      <div class="spacer"></div>
+
+        <section class="enroll">
+            <h2 class="header">Enrollment Form</h2>
+            <p class="sub-header">Please fill out the following form with your relevent information.<br>those marked with <span id="required">*</span> are required!</p>
+            <div class="enroll-form-form">
+                <form action="includes/enroll.inc.php" method="post">
+                    <h1 class="details-1"> <i class="fas fa-user"></i> Your Details</h1>
+                    <input type="text" name="name" placeholder="Full name...">
+                    <input type="text" name="email" placeholder="Email Address...">
+                    <input type="text" name="address" placeholder="Address...">
+                    <input type="text" name="dob" placeholder="Date of birth...">
+                    <input type="text" name="nin" placeholder="National Insurance Number...">
+                    <input type="text" name="pn" placeholder="Passport Number...">
+                    <h1 class="details-2"> <i class="fas fa-book-reader"></i> Course Details</h1>
+                    <input type="text" name="cname" placeholder="Course Name">
+                    <input type="text" name="nin" placeholder="Course Fees paid">
+                    <h1 class="details-2"> <i class="fab fa-odnoklassniki"></i> Your Next of Kin Details</h1>
+                    <input type="text" name="nokn" placeholder="Full name...">
+                    <input type="text" name="noke" placeholder="Phone Number...">
+                    <input type="text" name="noka" placeholder="Address...">
+                    <h1 class="details-1"> <i class="fas fa-user"></i> Account Details</h1>
+                    <input type="password" name="pwd" placeholder="Password...">
+                    <input type="password" name="pwdrepeat" placeholder="Repeat Password...">
+                    <button type="submit" class="btn" name="submit"> Enroll! </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+  
+
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: #161616;
+        color: #fff;
+      }
+      
+      #required {
+        color: red;
+      }
+      .spacer {
+        margin-top: 100px;
+      }
+      .header {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .sub-header {
+        margin-bottom: 70px;
+      }
+      .details-1 {
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 110px;
+      }
+      .details-2 {
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 110px;
+      }
+      .enroll {
+        margin: 0 auto;
+        text-align: center;
+        background: #1F1F1F;
+        color: white;
+        width: 100%;
+        border-radius: 19px;
+        padding: 20px;
+      }
+      input[type=text], input[type=password] {
+            width: 50%;
+            padding: 19px 20px;
+            margin: 8px 0;
+            display: block;
+            margin: 0 auto;
+            color: #363636;
+            border-radius: 10px;
+            width: 80%;
+            background: #171717;
+            box-sizing: border-box;
+            border: 1px solid #171717;
+        }
+
+        input[type=text], input[type=password] {
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #171717;
+            border: none;
+            margin: 30px;
+            color: #fff;
+            padding: 10px 40px;
+            font-weight: 900;
+            text-align: center;
+            text-decoration: none;
+            width: 50%;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .btn {
+            margin-top: 80px;
+            margin-bottom: 150px;
+        }
+
+    </style>
+     
+</body>
+</html>
