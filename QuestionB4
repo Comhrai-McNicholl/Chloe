@@ -3,7 +3,7 @@
 $serverName = "localhost";
 $dBUsername = "root";
 $dBPassword = "root";
-$dBName = "regNewStudent";
+$dBName = "studentsdb";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
       }
     
       // insert the user into the database
-      createUser($conn, $name, $email, $username, $pwd);
+      regNewStudent($conn, $name, $email, $username, $pwd);
     
     } else {
         header("location: ../signup.php");
