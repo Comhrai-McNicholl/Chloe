@@ -1,0 +1,83 @@
+<?php
+
+$serverName = "localhost";
+$dBUsername = "root";
+$dBPassword = "root";
+$dBName = "regNew";
+
+$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
+
+<section class="enroll">
+<h2 class="header">Enrollment Form</h2>
+<p class="sub-header">Please fill out the following form with your relevent information.<br>those marked with <span id="required">*</span> are required!</p>
+<div class="enroll-form-form">
+    <form action="includes/enroll.inc.php" method="post">
+        <h1 class="details-1"> <i class="fas fa-user"></i> Your Details</h1>
+        <input type="text" name="name" placeholder="Full name...">
+        <input type="text" name="email" placeholder="Email Address...">
+        <input type="text" name="address" placeholder="Address...">
+        <input type="text" name="dob" placeholder="Date of birth...">
+        <input type="text" name="nin" placeholder="National Insurance Number...">
+        <input type="text" name="pn" placeholder="Passport Number...">
+        <h1 class="details-2"> <i class="fas fa-book-reader"></i> Course Details</h1>
+        <input type="text" name="cname" placeholder="Course Name">
+        <input type="text" name="nin" placeholder="Course Fees paid">
+        <h1 class="details-2"> <i class="fab fa-odnoklassniki"></i> Your Next of Kin Details</h1>
+        <input type="text" name="nokn" placeholder="Full name...">
+        <input type="text" name="noke" placeholder="Phone Number...">
+        <input type="text" name="noka" placeholder="Address...">
+        <h1 class="details-1"> <i class="fas fa-user"></i> Account Details</h1>
+        <input type="password" name="pwd" placeholder="Password...">
+        <input type="password" name="pwdrepeat" placeholder="Repeat Password...">
+        <button type="submit" class="btn" name="submit"> Enroll! </button>
+    </form>
+</div>
+</section>
+</div>
+
+if (isset($_POST["submit"])) {
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $username = $_POST["uid"];
+    $pwd = $_POST["pwd"];
+    $pwdRepeat = $_POST["pwdrepeat"];
+
+    if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
+        header("location: ../signup.php?error=emptyinput");
+            exit();
+      }
+        // Proper username chosen
+      if (invalidUid($uid) !== false) {
+        header("location: ../signup.php?error=invaliduid");
+            exit();
+      }
+      // Proper email chosen
+      if (invalidEmail($email) !== false) {
+        header("location: ../signup.php?error=invalidemail");
+            exit();
+      }
+      // Do the two passwords match?
+      if (pwdMatch($pwd, $pwdRepeat) !== false) {
+        header("location: ../signup.php?error=passwordsdontmatch");
+            exit();
+      }
+      // Is the username taken already
+      if (uidExists($conn, $username) !== false) {
+        header("location: ../signup.php?error=usernametaken");
+            exit();
+      }
+    
+      // insert the user into the database
+      createUser($conn, $name, $email, $username, $pwd);
+    
+    } else {
+        header("location: ../signup.php");
+        exit();
+    }
+
+?>
